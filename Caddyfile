@@ -1,0 +1,4 @@
+localhost {
+    reverse_proxy phishing-demo:8080
+    encode zstd gzip
+}
