@@ -1,0 +1,7 @@
+services:
+  phishing-demo:
+    build: .
+    ports:
+      - "8080:8080"
+    container_name: phishing-demo
+    restart: unless-stopped
