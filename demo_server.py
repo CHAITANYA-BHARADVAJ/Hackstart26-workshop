@@ -1,19 +1,4 @@
 #!/usr/bin/env python3
-"""
-=============================================================
-  QR Phishing Awareness Demo Server — Educational Use Only
-=============================================================
-  For cybersecurity awareness workshops.
-  Run on Kali Linux to demonstrate what data a malicious
-  QR code can collect from a victim's device.
-
-  Usage:
-      python3 demo_server.py [--port 8080] [--interface eth0]
-
-  Requirements:
-      pip3 install flask qrcode[pil]
-=============================================================
-"""
 
 import argparse
 import json
@@ -42,7 +27,6 @@ app = Flask(__name__)
 scan_log = []
 
 # ─────────────────────────────────────────────
-# Landing page — mimics a "Free Wi-Fi" portal
 # ─────────────────────────────────────────────
 LANDING_PAGE = r"""
 <!DOCTYPE html>
@@ -413,7 +397,7 @@ LANDING_PAGE = r"""
 
 
 # ─────────────────────────────────────────────
-# Dashboard — Instructor view of all scans
+
 # ─────────────────────────────────────────────
 DASHBOARD_PAGE = r"""
 <!DOCTYPE html>
@@ -545,7 +529,6 @@ def collect():
     }
     scan_log.append(entry)
 
-    # Print to terminal for live workshop display
     print(f"\n{'='*50}")
     print(f"  🎯 NEW SCAN #{len(scan_log)}")
     print(f"{'='*50}")
