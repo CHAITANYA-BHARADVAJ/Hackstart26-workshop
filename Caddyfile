@@ -1,4 +1,4 @@
-3.110.224.5 {
-    reverse_proxy phishing-demo:8080
+3.110.224.5{
+    reverse_proxy hackstart26:8080
     encode zstd gzip
 }
