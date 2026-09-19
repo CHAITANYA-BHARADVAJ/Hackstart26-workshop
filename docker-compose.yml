@@ -1,7 +1,7 @@
 services:
-  phishing-demo:
+  hackstart26:
     build: .
-    container_name: phishing-demo
+    container_name: hackstart26
     restart: unless-stopped
     expose:
       - "8080"
@@ -19,7 +19,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     depends_on:
-      - phishing-demo
+      - hackstart26
 
 volumes:
   caddy_data:
