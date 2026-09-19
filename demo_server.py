@@ -453,7 +453,7 @@ DASHBOARD_PAGE = r"""
     </script>
 </head>
 <body>
-    <h1>📊 Phishing Demo — Instructor Dashboard</h1>
+    <h1>📊 Instructor Dashboard</h1>
     <p class="subtitle">Showing all devices that scanned the QR code</p>
     <div class="counter">{{ count }}</div>
     <div class="counter-label">devices scanned</div>
@@ -663,22 +663,7 @@ if __name__ == '__main__':
     url = f"http://{local_ip}:{args.port}"
     qr_path = generate_qr(url)
 
-    print(r"""
-    ╔══════════════════════════════════════════════════╗
-    ║   🛡️  QR PHISHING AWARENESS DEMO  🛡️            ║
-    ║   For Educational / Workshop Use Only            ║
-    ╠══════════════════════════════════════════════════╣
-    ║                                                  ║
-    ║   Victim page :  {:<29s}║
-    ║   Dashboard   :  {:<29s}║
-    ║   QR Image    :  {:<29s}║
-    ║                                                  ║
-    ║   QR saved to : {}
-    ║                                                  ║
-    ║   Show the QR code to workshop participants.     ║
-    ║   Open /dashboard on YOUR screen to see scans.   ║
-    ║                                                  ║
-    ╚══════════════════════════════════════════════════╝
+    
     """.format(url, url + "/dashboard", url + "/qr", qr_path))
 
     app.run(host='0.0.0.0', port=args.port, debug=False)
